@@ -22,7 +22,7 @@ with(powerConsum, hist(Global_active_power, xlab = "Global Active Power (kilowat
 #Save plot1 to a PNG file
 dev.copy(device = png, width = 480, height = 480, file = "Plot1.png")
 
-#Constructing Plot2..because x-axis is named "Koean" in my laptop, I reset x-axis
+#Constructing Plot2
 with(powerConsum, plot(DateTime, Global_active_power, type = "l", xlab = "",
                        ylab = "Global Active Power (kilowatts)", xaxt = "n"))
 axis(side = 1, at = c(as.numeric(powerConsum$DateTime[1]),
@@ -64,7 +64,7 @@ with(powerConsum, plot(DateTime, Sub_metering_1, type = "n", xaxt = "n",
                        xlab = "", ylab = "Energy sub metering"))
 axis(side = 1, at = c(as.numeric(powerConsum$DateTime[1]),
                       as.numeric(powerConsum$DateTime[1441]),
-                      as.numeric(powerConsum$DateTime[2880])),labels = c("Thu","Fri","Sat"))
+                      as.numeric(powerConsum$DateTime[2880])),labels c("Thu","Fri","Sat"))
 with(powerConsum, lines(DateTime, Sub_metering_1))
 with(powerConsum, lines(DateTime, Sub_metering_2, col = "red"))
 with(powerConsum, lines(DateTime, Sub_metering_3, col = "blue"))
